@@ -9,26 +9,60 @@ public class Mergesort extends Sort {
 
     private void merge(int lo, int mid, int hi) {
 
+        int k = lo;
+        int j = mid + 1;
+        int x = lo;
+
+        while (x <= hi) {
+            if (k <= mid && j <= hi) {
+                if (values[k] < values[j]) {
+                    auxilary[x] = values[k];
+                    k++;
+                    x++;
+                } else {
+                    auxilary[x] = values[j];
+                    j++;
+                    x++;
+                }
+            } else if (k <= mid) {
+                auxilary[x] = values[k];
+                k++;
+                x++;
+            } else if (j <= hi) {
+                auxilary[x] = values[j];
+                j++;
+                x++;
+            }
+        }
+
+        for (int i = lo; i <= hi; i++) {
+            values[i] = auxilary[i];
+        }
+
     }
 
     private void mergeSort(int lo, int hi) {
-        if (hi - lo != 1) {
-            System.out.println(hi);
-            System.out.println(lo);
-            int mid = lo + (hi - lo) / 2;
-            System.out.println(mid);
+        if (hi - lo == 1) {
+            if (values[hi] < values[lo]) {
+                int x = values[hi];
+                values[hi] = values[lo];
+                values[lo] = x;
+            }
+        } else if (hi - lo == 0) {
+            values[hi] = values[hi];
+        } else {
+            int mid = (hi + lo) / 2;
             mergeSort(lo, mid);
             mergeSort(mid + 1, hi);
             merge(lo, mid, hi);
         }
-        System.out.println("how many times called");
     }
 
     public int[] sort(int[] arr) {
         values = arr;
         auxilary = new int[arr.length];
         mergeSort(0, values.length - 1);
-        return null;
+        return values;
     }
 
 }
