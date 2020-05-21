@@ -61,7 +61,12 @@ public class Mergesort extends Sort {
     public int[] sort(int[] arr) {
         values = arr;
         auxilary = new int[arr.length];
+
+        long start = System.nanoTime();
         mergeSort(0, values.length - 1);
+        long finish = System.nanoTime();
+        System.out.println("runtime: " + ((finish - start) * Math.pow(10, -9)));
+
         return values;
     }
 

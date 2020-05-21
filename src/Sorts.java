@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Sorts {
@@ -6,12 +5,16 @@ public class Sorts {
 
     public static void main(String[] args) {
         Mergesort mergesort = new Mergesort();
+        SelectionSort selectionSort = new SelectionSort();
+
         Sort title = new Sort(true);
-        int[] test = getRandomIntArray(6);
-        System.out.println("Unsorted: " + Arrays.toString(test));
+        int[] test = getRandomIntArray(100000);
+        int[] test2 = getRandomIntArray(100000);
         mergesort.sort(test);
-        System.out.println("Sorted: " + Arrays.toString(mergesort.sort(test)));
-        Sort[] sorts = {title, mergesort, mergesort, mergesort, mergesort};
+        selectionSort.sort(test2);
+        //System.out.println("Unsorted: " + Arrays.toString(test));
+        // System.out.println("Sorted: " + Arrays.toString(mergesort.sort(test)));
+        Sort[] sorts = {title, mergesort, selectionSort, mergesort, mergesort};
         compare(sorts);
     }
 
