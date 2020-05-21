@@ -7,17 +7,24 @@ public class Sorts {
         Mergesort mergesort = new Mergesort();
         SelectionSort selectionSort = new SelectionSort();
         InsertionSort insertionSort = new InsertionSort();
+        BubbleSort bubbleSort = new BubbleSort();
+        ShellSort shellSort = new ShellSort();
 
         Sort title = new Sort(true);
-        int[] test = getRandomIntArray(100);
-        int[] test2 = getRandomIntArray(100);
-        int[] test3 = getRandomIntArray(100);
+        int num = 5555;
+        int[] test = getRandomIntArray(num);
+        int[] test2 = getRandomIntArray(num);
+        int[] test3 = getRandomIntArray(num);
+        int[] test4 = getRandomIntArray(num);
+        int[] test5 = getRandomIntArray(num);
+
         mergesort.sort(test);
         selectionSort.sort(test2);
         insertionSort.sort(test3);
-        //System.out.println("Unsorted: " + Arrays.toString(test));
-        // System.out.println("Sorted: " + Arrays.toString(mergesort.sort(test)));
-        Sort[] sorts = {title, mergesort, selectionSort, insertionSort, mergesort};
+        bubbleSort.sort(test4);
+        shellSort.sort(test5);
+
+        Sort[] sorts = {title, mergesort, selectionSort, insertionSort, bubbleSort, shellSort};
         compare(sorts);
     }
 
