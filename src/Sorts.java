@@ -9,22 +9,25 @@ public class Sorts {
         InsertionSort insertionSort = new InsertionSort();
         BubbleSort bubbleSort = new BubbleSort();
         ShellSort shellSort = new ShellSort();
+        QuickSort quickSort = new QuickSort();
 
         Sort title = new Sort(true);
-        int num = 5555;
+        int num = 15;
         int[] test = getRandomIntArray(num);
         int[] test2 = getRandomIntArray(num);
         int[] test3 = getRandomIntArray(num);
         int[] test4 = getRandomIntArray(num);
         int[] test5 = getRandomIntArray(num);
+        int[] test6 = getRandomIntArray(num);
 
         mergesort.sort(test);
         selectionSort.sort(test2);
         insertionSort.sort(test3);
         bubbleSort.sort(test4);
         shellSort.sort(test5);
+        quickSort.sort(test5);
 
-        Sort[] sorts = {title, mergesort, selectionSort, insertionSort, bubbleSort, shellSort};
+        Sort[] sorts = {title, mergesort, selectionSort, insertionSort, bubbleSort, shellSort, quickSort};
         compare(sorts);
     }
 
