@@ -20,7 +20,11 @@ public class Sort {
         if (isTitle) {
             return "Runtime";
         }
-        return String.valueOf(this.runtime) + "s";
+        long start = System.nanoTime();
+        sort();
+        long finish = System.nanoTime();
+        System.out.println(name + " took " + String.format("%.8f", ((finish - start) * Math.pow(10, -9))));
+        return String.format("%.8f", ((finish - start) * Math.pow(10, -9)));
     }
 
     public String getName() {
@@ -35,6 +39,10 @@ public class Sort {
             return "Time Complexity";
         }
         return String.valueOf(this.timeComplexity);
+    }
+
+    public int[] sort() {
+        return null;
     }
 
     public String getFormattedString(int numItems) {
@@ -54,7 +62,7 @@ public class Sort {
         }
         numberItems += "|";
 
-        String runtime = this.getRuntime();
+        String runtime = this.getRuntime() + "s";
         for (int i = 0; i < (10 - this.getRuntime().length()); i++) {
             runtime += " ";
         }

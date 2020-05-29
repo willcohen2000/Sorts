@@ -4,9 +4,11 @@ public class ShellSort extends Sort {
         super(-1, "Shell Sort", "O(n^2)");
     }
 
-    public static int[] sort(int[] arr) {
-        long start = System.nanoTime();
+    public double test() {
+        return 2;
+    }
 
+    public static int[] sort(int[] arr) {
         int h = 1;
 
         while (h < (arr.length / 3)) {
@@ -23,9 +25,6 @@ public class ShellSort extends Sort {
             }
             h = h / 3;
         }
-
-        long finish = System.nanoTime();
-        System.out.println("runtime: " + ((finish - start) * Math.pow(10, -9)));
 
         return arr;
     }

@@ -5,7 +5,6 @@ public class InsertionSort extends Sort {
     }
 
     public static int[] sort(int[] arr) {
-        long start = System.nanoTime();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j > 0; j--) {
                 if (arr[j] < arr[j - 1]) {
@@ -15,8 +14,6 @@ public class InsertionSort extends Sort {
                 }
             }
         }
-        long finish = System.nanoTime();
-        System.out.println("runtime: " + ((finish - start) * Math.pow(10, -9)));
         return arr;
     }
 

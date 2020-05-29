@@ -5,7 +5,6 @@ public class SelectionSort extends Sort {
     }
 
     public static int[] sort(int[] arr) {
-        long start = System.nanoTime();
         for (int i = 0; i < arr.length; i++) {
             int min = i;
             for (int j = i; j < arr.length; j++) {
@@ -19,9 +18,6 @@ public class SelectionSort extends Sort {
                 arr[i] = minVal;
             }
         }
-        long finish = System.nanoTime();
-        System.out.println("runtime: " + ((finish - start) * Math.pow(10, -9)));
-
         return arr;
     }
 

@@ -11,8 +11,11 @@ public class Sorts {
         ShellSort shellSort = new ShellSort();
         QuickSort quickSort = new QuickSort();
 
+        System.out.println(quickSort.getRuntime());
+        System.out.println(shellSort.getRuntime());
+
         Sort title = new Sort(true);
-        int num = 15;
+        int num = 100000;
         int[] test = getRandomIntArray(num);
         int[] test2 = getRandomIntArray(num);
         int[] test3 = getRandomIntArray(num);
@@ -48,7 +51,7 @@ public class Sorts {
     public static void compare(Sort[] sorts) {
         for (Sort sort : sorts) {
             System.out.println("|----------------------------------------------------------------|");
-            System.out.println(sort.getFormattedString(5555));
+            System.out.println(sort.getFormattedString(10000));
         }
         System.out.println("|----------------------------------------------------------------|");
     }

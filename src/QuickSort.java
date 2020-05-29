@@ -57,13 +57,8 @@ public class QuickSort extends Sort {
 
     public static int[] sort(int[] arr) {
 
-        long start = System.nanoTime();
-
         shuffleArray(arr);
         quickSort(arr, 0, arr.length - 1);
-
-        long finish = System.nanoTime();
-        System.out.println("runtime: " + ((finish - start) * Math.pow(10, -9)));
 
         return arr;
     }
